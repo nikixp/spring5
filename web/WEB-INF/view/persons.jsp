@@ -9,7 +9,7 @@
         <script src="<c:url value="/webjars/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" />" type="text/javascript"></script>
         <link rel="stylesheet" href="<c:url value="/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />"/>
         <link rel="stylesheet" href="<c:url value="/resources/css/copyrights.css" />"/>
-        <title>Spring 5</title>
+        <title>Person list</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse" id="navbarsDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/spring5/app">App page <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/spring5/app">App page</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Person repository</a>
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Person repository <span class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="/spring5/addperson">Add new person</a>
                             <a class="dropdown-item" href="/spring5/persons">View persons</a>
@@ -37,12 +37,27 @@
                 </form>
             </div>
         </nav>
-        
-        <footer class="footer">
-            <div class="container-fluid">
-                <span class="text-muted">© nikixp 2017</span>
-            </div>
-        </footer>
-        
+        <br>
+        <div class="container">
+            <h3>Persons list</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${persons}" var="p">
+                        <tr>
+                            <td>${p.getId()}</td>
+                            <td>${p.getName()}</td>
+                            <td>${p.getEmail()}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
