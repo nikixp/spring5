@@ -42,4 +42,10 @@ public class PersonRepositoryImp implements PersonRepository {
         return person;
     }
 
+    @Override
+    public void deletePerson(Person person) {
+        Person personByName = getPersonByName(person.getName());
+        persons.remove(personByName);
+    }
+
 }

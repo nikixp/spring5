@@ -46,6 +46,7 @@
                         <th>#</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,7 @@
                             <td>${p.getId()}</td>
                             <td>${p.getName()}</td>
                             <td>${p.getEmail()}</td>
+                            <td><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></td>
                         </tr>
                     </c:forEach>
                 </tbody>

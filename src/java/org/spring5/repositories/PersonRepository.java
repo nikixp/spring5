@@ -16,4 +16,7 @@ public interface PersonRepository {
     Person getPersonByName(String name);
 
     Person addPerson(String name, String email);
+    
+    void deletePerson(Person person);
+    
 }
